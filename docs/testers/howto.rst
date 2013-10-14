@@ -111,7 +111,7 @@ Install dependencies
 First, install all the base dependencies plus git, virtualenv and development
 files needed to compile several extensions::
 
-   apt-get install openvpn git-core python-dev python-pyside python-setuptools python-virtualenv
+   sudo apt-get install openvpn git-core python-dev python-pyside python-setuptools python-virtualenv python-all-dev python-pip python-dev python-openssl git libgnutls-dev python-qt4 g++ libsqlite3-dev
 
 .. TODO Should review these dependencies. I think python-sqlite is missing, we
    have an issue for that^^
