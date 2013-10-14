@@ -132,7 +132,7 @@ Download and source the following script in the parent folder where you want you
 
 .. code-block:: bash
 
-   cd /tmp
+   cd /tmp  
    wget https://raw.github.com/leapcode/bitmask_client/develop/pkg/scripts/bitmask_bootstrap.sh
    source bitmask_bootstrap.sh
 
