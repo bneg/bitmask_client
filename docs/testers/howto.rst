@@ -135,6 +135,11 @@ Download and source the following script in the parent folder where you want you
    cd /tmp  
    wget https://raw.github.com/leapcode/bitmask_client/develop/pkg/scripts/bitmask_bootstrap.sh
    source bitmask_bootstrap.sh
+   pushd src/leap.bitmask
+   make
+   popd
+
+.. TODO fix build process that fails to issue "make" in src, until then its manual
 
 Tada! If everything went well, you should be able to run bitmask by typing::
 
