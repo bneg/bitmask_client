@@ -1,7 +1,7 @@
 #### Quickstart build of dev environment
-Assumptions: These instructions were made on a clean Ubuntu 12.04.3 system.
-Goal: With minimal effort or reading install the necessary packages to build and develop on bitmask_client
-Outcome: At the end of these instructions, you should be able to run the bitmask client GUI in debug mode and connect to a LEAP node (bitmask.net)  
+**Assumptions:** These instructions were made on a clean Ubuntu 12.04.3 system.  
+**Goal:** With minimal effort or reading install the necessary packages to build and develop on bitmask_client  
+**Outcome:** At the end of these instructions, you should be able to run the bitmask client GUI in debug mode and connect to a LEAP node (bitmask.net)  
 
 #### Start:
 
@@ -49,4 +49,4 @@ Run bitmask_client in debug mode
     $ bin/bitmask --debug  
 
 #### Finish
-You should see the bitmask_client window prompting to connect to an existing node or add a new one.  If not something went wrong, maybe ask on #leap-dev at irc.freenode.net
+You should see the bitmask_client window prompting to connect to an existing node or add a new one.  If not, something went wrong, maybe ask on #leap-dev at irc.freenode.net
