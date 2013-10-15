@@ -108,13 +108,13 @@ compact way suitable (ahem) also for non developers.
 
 Install dependencies
 ^^^^^^^^^^^^^^^^^^^^
-First, install all the base dependencies plus git, virtualenv and development
-files needed to compile several extensions::
+First, install all the development files and dependencies needed to compile::
 
-   sudo apt-get install openvpn git-core python-dev python-pyside python-setuptools python-virtualenv python-all-dev python-pip python-dev python-openssl git libgnutls-dev python-qt4 g++ libsqlite3-dev
+   sudo apt-get install openvpn git-core python-dev python-pyside python-setuptools \
+   python-virtualenv python-all-dev python-pip python-dev python-openssl git \
+   libgnutls-dev python-qt4 g++ libsqlite3-dev
 
-.. TODO Should review these dependencies. I think python-sqlite is missing, we
-   have an issue for that^^
+.. TODO Should review these dependencies.
 
 .. TODO we really should keep the dependencies in a single file that we are able to
    include, to avoid phasing out.
@@ -135,6 +135,11 @@ Download and source the following script in the parent folder where you want you
    cd /tmp  
    wget https://raw.github.com/leapcode/bitmask_client/develop/pkg/scripts/bitmask_bootstrap.sh
    source bitmask_bootstrap.sh
+   pushd src/leap.bitmask
+   make
+   popd
+
+.. TODO fix build process that fails to issue "make" in src, until then its manual
 
 Tada! If everything went well, you should be able to run bitmask by typing::
 
