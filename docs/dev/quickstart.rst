@@ -6,11 +6,11 @@ Quickstart
 **Assumptions:** These instructions were made on a clean Ubuntu 12.04.3
 system.
 
-**Goal:** With minimal effort or reading install the necessary packages
+**Goal:** With minimal effort or reading, install the necessary packages
 to build the latest development code for ``bitmask_client``
 
 **Outcome:** At the end of these instructions, you should be able to run
-the latest development branch for bitmask client, getting the GUI in debug
+the latest development branch for bitmask client, get the GUI in debug
 mode and connect to a LEAP provider (bitmask.net)
 
 If you want to know what each step is for, check
@@ -44,7 +44,7 @@ Clone the repo into your working directory, and checkout development branch::
     $ git checkout develop
 
 
-Create and activate the virtualenv, and symlink to your gloabal PySide install::
+Create and activate the virtualenv, and symlink to your global PySide install::
 
     $ virtualenv .
     $ source bin/activate
