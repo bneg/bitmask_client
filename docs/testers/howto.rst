@@ -108,6 +108,7 @@ compact way suitable (ahem) also for non developers.
 
 Install dependencies
 ^^^^^^^^^^^^^^^^^^^^
+<<<<<<< HEAD
 First, install all the development files and dependencies needed to compile::
 
    sudo apt-get install openvpn git-core python-dev python-pyside python-setuptools \
@@ -118,6 +119,13 @@ First, install all the development files and dependencies needed to compile::
 
 .. TODO we really should keep the dependencies in a single file that we are able to
    include, to avoid phasing out.
+=======
+First, install all the development files and dependencies needed to compile:
+
+.. include:: ../dev/quickstart.rst
+   :start-after: begin-debian-deps
+   :end-before: end-debian-deps
+>>>>>>> upstream/develop
 
 
 Bootstrap script

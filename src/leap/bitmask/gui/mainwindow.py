@@ -298,6 +298,11 @@ class MainWindow(QtGui.QMainWindow):
 
         self.ui.lblNewUpdates.setVisible(False)
         self.ui.btnMore.setVisible(False)
+        #########################################
+        # We hide this in height temporarily too
+        self.ui.lblNewUpdates.resize(0, 0)
+        self.ui.btnMore.resize(0, 0)
+        #########################################
         self.ui.btnMore.clicked.connect(self._updates_details)
 
         # Services signals/slots connection
@@ -364,7 +369,6 @@ class MainWindow(QtGui.QMainWindow):
         finishing.
         """
         if self._wizard_firstrun:
-            self._settings.set_properprovider(False)
             providers = self._settings.get_configured_providers()
             has_provider_on_disk = len(providers) != 0
             if not has_provider_on_disk:
@@ -577,9 +581,13 @@ class MainWindow(QtGui.QMainWindow):
                 self._login_widget.set_password(possible_password)
                 self._login()
             self._wizard = None
-            self._settings.set_properprovider(True)
         else:
             self._try_autostart_eip()
+
+            domain = self._settings.get_provider()
+            if domain is not None:
+                self._login_widget.select_provider_by_name(domain)
+
             if not self._settings.get_remember():
                 # nothing to do here
                 return
@@ -596,9 +604,6 @@ class MainWindow(QtGui.QMainWindow):
             if saved_user is not None and has_keyring():
                 # fill the username
                 self._login_widget.set_user(username)
-
-                # select the configured provider in the combo box
-                self._login_widget.select_provider_by_name(domain)
 
                 self._login_widget.set_remember(True)
 
@@ -639,7 +644,7 @@ class MainWindow(QtGui.QMainWindow):
         eip_menu = systrayMenu.addMenu(self.tr("Encrypted Internet: OFF"))
         eip_menu.addAction(self._action_eip_startstop)
         self._eip_status.set_eip_status_menu(eip_menu)
-
+        systrayMenu.addSeparator()
         systrayMenu.addAction(self._action_mail_status)
         systrayMenu.addSeparator()
         systrayMenu.addAction(self.ui.action_quit)
@@ -941,6 +946,7 @@ class MainWindow(QtGui.QMainWindow):
         """
 
         self._login_widget.logged_in()
+        self.ui.lblLoginProvider.setText(self._provider_config.get_name())
 
         self._enabled_services = self._settings.get_enabled_services(
             self._provider_config.get_domain())
@@ -1613,6 +1619,7 @@ class MainWindow(QtGui.QMainWindow):
         logging out
         """
         self._login_widget.done_logout()
+        self.ui.lblLoginProvider.setText(self.tr("Login"))
 
         if ok:
             self._logged_user = None
