@@ -23,8 +23,8 @@ Prerequisites
 .. begin-debian-deps
 ::
 
-    $ sudo apt-get install git python-dev python-setuptools
-    python-virtualenv python-pip python-openssl libsqlite3-dev g++ openvpn
+    $ sudo apt-get install git python-dev python-setuptools \
+    python-virtualenv python-pip python-openssl libsqlite3-dev g++ openvpn \
     pyside-tools python-pyside 
     
 .. python-qt4  ??? (for translations)
@@ -57,7 +57,10 @@ Python libraries
 Install the bitmask package in development mode inside the virtualenv. This will
 also install the needed dependencies::
 
-    (bitmask)$ python2 setup.py develop
+    (bitmask)$ bin/python2 setup.py develop
+.. OR
+.. (bitmask)$ ./setup.py develop
+.. they should both be running with the virtualenv python, ie python2
 
 Compile the resource files::
 
